@@ -1,5 +1,5 @@
 @import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300italic,600,600italic);
-@import url(https://fonts.googleapis.com/css?family=Source+Code+Pro:400,400italic,700,700italic);
+@import url(https://fonts.googleapis.com/css?family=Source+Code+Pro:500,500italic,700,700italic);
 
 body {
   font-family: "Source Sans Pro";
@@ -9,7 +9,7 @@ body {
 }
 
 .content {
-  max-width: 670px;
+  max-width: 660px;
   margin: auto;
 }
 
@@ -37,6 +37,7 @@ pre, code {
 }
 
 pre {
+  white-space: pre-wrap;
   padding-left: 5px;
 }
 
@@ -49,6 +50,11 @@ code {
   margin: -1px;
 }
 
+em code {
+  font-style: normal;
+}
+
 .footnotes {
+  border-top: 3px solid #c6ccdd;
   font-size: 80%;
 }
