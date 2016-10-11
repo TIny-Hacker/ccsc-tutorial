@@ -1,3 +1,54 @@
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300italic,600,600italic);
+@import url(https://fonts.googleapis.com/css?family=Source+Code+Pro:400,400italic,700,700italic);
+
+body {
+  font-family: "Source Sans Pro";
+  font-size: 120%;
+  line-height: 120%;
+  background: #e8eeff;
+}
+
+.content {
+  max-width: 670px;
+  margin: auto;
+}
+
+h1, h2 {
+  color: #263;
+}
+
+h1 {
+  padding-top: 20px;
+  padding-bottom: 5px;
+  border-bottom: 3px solid #c6ccdd;
+}
+
+h2 {
+  padding-bottom: 1px;
+  border-bottom: 1px solid #c6ccdd;
+}
+
+pre, code {
+  font-family: "Source Code Pro";
+  font-size: 75%;
+  background: #fff;
+  border: 1px solid #c6ccdd;
+  border-radius: 4px;
+}
+
+pre {
+  padding-left: 5px;
+}
+
 pre .muted {
-    opacity: 0.4;
+  opacity: 0.4;
+}
+
+code {
+  padding: 2px;
+  margin: -1px;
+}
+
+.footnotes {
+  font-size: 80%;
 }
