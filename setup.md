@@ -110,7 +110,86 @@ instructions, modified as necessary for your distribution.)
 
 ## Windows (10)
 
-Coming soon...
+(Not sure how much trouble it would be to uninstall this setup.  Planning
+to experiment on a Windows virtual machine.)
+
+1.  Download and install the latest version of [Git](https://git-scm.com)
+    for Windows.  The installation wizard that pops up gives you a lot of
+    options.  My notes below assume you want the minimal installation
+    necessary for this tutorial,
+    but it's fine for you to choose additional features you're interested
+    in.
+    
+    -   When you get to "Select Components,"
+        you can safely uncheck all of the options.  When you get to "Select
+        Start Menu Folder" it's save to check "Don't create a Start Menu
+        folder."
+
+    -   When you get to "Adjusting your PATH environment, I suggest
+        you leave the default, "Use Git from the Windows Command Prompt,"
+        selected.  This will save you from having to modify the
+        PATH environment variable via Windows settings later.
+    
+    -   When you get to "Configuring the line ending conversions," leave
+        the first option, "Checkout Window-style, commit Unix-style line
+        endings," selected.  As part of the tutorial you'll be
+        downloading text files I created in Linux; this option will
+        fix the line endings for you when you open these files in
+        Windows.
+    
+    -   When you get to "Configuring the terminal emulator to use with
+        Git Bash, it's save to choose "Use Windows' default console
+        window."    
+    
+    -   Under "Configuring extra options," it's safe to uncheck both
+        "Enable file system caching" and "Enable Git Credential Manager."
+
+2.  Download and install [Ruby](https://www.ruby-lang.org/en/).  The
+    easiest way to do this on Windows is to use
+    [RubyInstaller](http://rubyinstaller.org).  The RubyInstaller
+    site recommends using a 2.2.X installer; you probably want
+    Ruby 2.2.5 (x64) (from
+    [http://rubyinstaller.org/downloads](http://rubyinstaller.org/downloads)).
+    
+    -   When you run the installer, and get to "Installation
+        Destination and Optional Tasks," select "Add Ruby executables
+        to your PATH."  (And change the installation folder if you
+        like.)
+    
+    In addition to Ruby, you need the
+    [Development Kit](https://github.com/oneclick/rubyinstaller/wiki/Development-Kit) ("DevKit")
+    in order to compile
+    native extensions for some of the Ruby packages we'll need later
+    on.  You probably want the download under "For use with Ruby
+    2.0 and above (x64 - 64bits only)," on the left side near the
+    bottom of the RubyInstaller download page.
+
+    -   The Development Kit download is a self-extracting archive.
+        Unfortunately, when you extract it you get a bunch of
+        folders and files, rather than a single folder (containing
+        a bunch of folders and files).  With that in mind, create
+        a new folder and copy the download into it before you
+        extract the files.
+    
+    -   To install the DevKit, move the folder (into which you just
+        extracted the files) to wherever you would like to be its
+        permanent location.  Then, open a Command Prompt window,
+        navigate to that location, and run `ruby dk.rb init`.  (I
+        put the DevKit in "C:\RubyDevKit" so that it would be
+        right next to the Ruby installation, in "C:\Ruby22-x64.")
+        
+        <pre>
+        <span class="muted">C:\Users\User Name></span>cd ..\..
+        
+        <span class="muted">C:\></span>cd RubyDevKit
+        
+        <span class="muted">C:\RubyDevKit></span>ruby dk.rb init
+        <span class="muted">[INFO] found RubyInstaller v2.2.5 at C:/Ruby22-x64
+        
+        Initialization complete! Please review and modify the auto-generated
+        'config.yml' file to ensure it contains the root directories to all
+        of the installed Rubies you want enhanced by the DevKit.</span>
+        </pre>
 
 ## OS X (with Homebrew)
 
