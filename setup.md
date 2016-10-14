@@ -96,8 +96,8 @@ instructions, modified as necessary for your distribution.)
     the link.
 
     You'll get a "/ not found" error at first.   You just need
-    to add "/ccsc-example/" to the end of the URL, so that it's something like
-    "https://workspace-user.c9users.io/ccsc-example/", and then refresh
+    to add `/ccsc-example/` to the end of the URL, so that it's something like
+    `https://workspace-user.c9users.io/ccsc-example/`, and then refresh
     the page.  If everything's worked correctly, you should see a page
     titled "CCSC Example" with a few titles, a list, a little bit of source
     code and a little bit of mathematical notation.
