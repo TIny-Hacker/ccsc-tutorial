@@ -38,7 +38,7 @@ instructions, modified as necessary for your distribution.)
     <pre>
     <span class="muted">user:~/workspace $</span> git config --global user.name "YOUR NAME"
     <span class="muted">user:~/workspace $</span> git config --global user.email "YOUR EMAIL ADDRESS"
-    <span class="muted">user:~/workspace $</span> git clone 'https://github.com/dvon/ccsc-example'
+    <span class="muted">user:~/workspace $</span> git clone https://github.com/dvon/ccsc-example
     <span class="muted">Cloning into 'ccsc-example'...
     remote: Counting objects: 52, done.
     remote: Compressing objects: 100% (31/31), done.
@@ -110,8 +110,7 @@ instructions, modified as necessary for your distribution.)
 
 ## Windows (10)
 
-(Not sure how much trouble it would be to uninstall this setup.  Planning
-to experiment on a Windows virtual machine.)
+<!-- something here about how much trouble to uninstall? -->
 
 1.  Download and install the latest version of [Git](https://git-scm.com)
     for Windows.  The installation wizard that pops up gives you a lot of
@@ -144,17 +143,33 @@ to experiment on a Windows virtual machine.)
     -   Under "Configuring extra options," it's safe to uncheck both
         "Enable file system caching" and "Enable Git Credential Manager."
 
-2.  Download and install [Ruby](https://www.ruby-lang.org/en/).  The
+2.  Within the Windows Command Prompt (cmd.exe), setup Git and use it to
+    make a local copy of the example repository I created for this
+    tutorial.  (I created a folder called "ccsc" and put the repository
+    copy in that folder.)
+    
+    <pre>
+    <span class="muted">C:\Users\User Name></span>git config --global user.name "YOUR NAME"
+    <span class="muted">C:\Users\User Name></span>git config --global user.email "YOUR EMAIL ADDRESS"
+    <span class="muted">C:\Users\User Name></span>mkdir ccsc
+    <span class="muted">C:\Users\User Name></span>cd ccsc
+    <span class="muted">C:\Users\User Name\ccsc></span>git clone https://github.com/dvon/ccsc-example
+    <span class="muted">Cloning into 'ccsc-example'...
+    remote: Counting objects: 52, done.
+    remote: Total 52 (delta 0), reused 0 (delta 0), pack-reused 52
+    Unpacking objects: 100% (52/52), done.</span>
+    </pre>
+
+3.  Download and install [Ruby](https://www.ruby-lang.org/en/).  The
     easiest way to do this on Windows is to use
     [RubyInstaller](http://rubyinstaller.org).  The RubyInstaller
     site recommends using a 2.2.X installer; you probably want
     Ruby 2.2.5 (x64) (from
     [http://rubyinstaller.org/downloads](http://rubyinstaller.org/downloads)).
-    
-    -   When you run the installer, and get to "Installation
-        Destination and Optional Tasks," select "Add Ruby executables
-        to your PATH."  (And change the installation folder if you
-        like.)
+    When you run the installer, and get to "Installation
+    Destination and Optional Tasks," select "Add Ruby executables
+    to your PATH."  (And change the installation folder if you
+    like.)
     
     In addition to Ruby, you need the
     [Development Kit](https://github.com/oneclick/rubyinstaller/wiki/Development-Kit) ("DevKit")
@@ -164,32 +179,101 @@ to experiment on a Windows virtual machine.)
     2.0 and above (x64 - 64bits only)," on the left side near the
     bottom of the RubyInstaller download page.
 
-    -   The Development Kit download is a self-extracting archive.
-        Unfortunately, when you extract it you get a bunch of
-        folders and files, rather than a single folder (containing
-        a bunch of folders and files).  With that in mind, create
-        a new folder and copy the download into it before you
-        extract the files.
+    The Development Kit download is a self-extracting archive.
+    Unfortunately, when you extract it you get a bunch of
+    folders and files, rather than a single folder (containing
+    a bunch of folders and files).  With that in mind, create
+    a new folder and copy the downloaded file into it before you
+    double-click on it to extract the files.
+    Next, move the new folder (into which you just
+    extracted the files) to wherever you would like to be its
+    permanent location.  Then, open a Command Prompt window,
+    navigate to that location, and run `ruby dk.rb init`.  (I
+    put the DevKit in "C:\RubyDevKit" so that it would be
+    right next to the Ruby installation, in "C:\Ruby22-x64.")
+    Finally, run `ruby dk.rb install`.
     
-    -   To install the DevKit, move the folder (into which you just
-        extracted the files) to wherever you would like to be its
-        permanent location.  Then, open a Command Prompt window,
-        navigate to that location, and run `ruby dk.rb init`.  (I
-        put the DevKit in "C:\RubyDevKit" so that it would be
-        right next to the Ruby installation, in "C:\Ruby22-x64.")
-        
-        <pre>
-        <span class="muted">C:\Users\User Name></span>cd ..\..
-        
-        <span class="muted">C:\></span>cd RubyDevKit
-        
-        <span class="muted">C:\RubyDevKit></span>ruby dk.rb init
-        <span class="muted">[INFO] found RubyInstaller v2.2.5 at C:/Ruby22-x64
-        
-        Initialization complete! Please review and modify the auto-generated
-        'config.yml' file to ensure it contains the root directories to all
-        of the installed Rubies you want enhanced by the DevKit.</span>
-        </pre>
+    <pre>
+    <span class="muted">C:\Users\User Name></span>cd ..\..
+    <span class="muted">C:\></span>cd RubyDevKit
+    <span class="muted">C:\RubyDevKit></span>ruby dk.rb init
+    <span class="muted">[INFO] found RubyInstaller v2.2.5 at C:/Ruby22-x64
+    Initialization complete! Please review and modify the auto-
+    generated 'config.yml' file to ensure it contains the root
+    directories to all of the installed Rubies you want enhanced by
+    the DevKit.</span>
+    <span class="muted">C:\RubyDevKit></span>ruby dk.rb install
+    <span class="muted">[INFO] Installing 'C:/Ruby22-x64/lib/ruby/site_ruby/2.2.0/rubygems/defaults/operating_system.rb'
+    [INFO] Installing 'C:/Ruby22-x64/lib/ruby/site_ruby/devkit.rb'</span>
+    </pre>
+
+4.  Install [Bundler](http://bundler.io/) (using
+    [Ruby](https://www.ruby-lang.org/)'s `gem install` command):
+
+    <pre>
+    <span class="muted">C:\Users\User Name\ccsc></span>gem install bundler
+    </pre>
+    
+    The first time you run this command, you'll get a Windows
+    Security Alert message---"Windows Firewall has blocked some
+    features of this program..."  Click "Allow access" to continue.
+
+    Unfortunately you may also get a certificate verification error
+    when you try to run `gem install`.  If you do, you'll need to
+    manually update the "rubygems" package in order to get an
+    updated SSL certificate.  You can get the update from
+    [https://rubygems.org/gems/rubygems-update/versions/2.6.7](https://rubygems.org/gems/rubygems-update/versions/2.6.7/) (Click "Download," on
+    the right side near the bottom of the page.)  To install
+    the update:
+    
+    <pre>
+    <span class="muted">C:\Users\User Name\Downloads></span>gem install --local rubygems-update-2.6.7.gem
+    <span class="muted">Successfully installed rubygems-update-2.6.7
+    Parsing documentation for rubygems-update-2.6.7
+    Installing ri documentation for rubygems-update-2.6.7
+    Done installing documenation for rubygems-update after 40 seconds
+    1 gem installed
+    C:\Users\User Name\Downloads></span>update_rubygems
+    <span class="muted">RubyGems 2.6.7 installed
+    Parsing documentation for rubygems-2.6.7
+    Installing ri documenation for rubygems-2.6.7...</span>
+    </pre>
+    
+    At this point you should have the updated SSL certificate,
+    and `gem install bundler` should work if you try it again.
+
+5.  Navigate to the repository folder; use Bundler to update Ruby
+    packages (based on contents of repository's "Gemfile") needed
+    for local [Jekyll](https://jekyllrb.com) installation:
+
+    <pre>
+    <span class="muted">C:\Users\User Name\ccsc\ccsc-example></span>bundle update
+    <span class="muted">Fetching gem metadata from https://rubygems.org/..........
+    Fetching version metadata from https://rubygems.org/.
+    Resolving dependencies...</span>
+    </pre>
+
+6.  Execute Jekyll's `serve` command via Bundler's `exec` command:
+
+    <pre>
+    <span class="muted">C:\Users\User Name\ccsc\ccsc-example></span>bundle exec jekyll serve
+    <span class="muted">Configuration file: C:/Users/User Name/ccsc/ccsc-example/_config.yml
+                Source: C:/Users/User Name/ccsc/ccsc-example
+           Destination: C:/Users/User Name/ccsc/ccsc-example/_site
+     Incremental build: disabled. Enable with --incremental
+          Generating...
+                        done in 0.312 seconds.
+     Auto-regeneration: enabled for 'C:/Users/User Name/ccsc-tutorial/ccsc-example'
+    Configuration file: C:/Users/User Name/ccsc-tutorial/ccsc-example/_config.yml
+        Server address: http://127.0.0.1:4000/ccsc-example/
+      Server running... press ctrl-c to stop.</span>
+    </pre>
+    
+    Open a web browser and go to the URL Jekyll gives you
+    (`http://128.0.0.1:4000/ccsc-example/`, after "Server address" in the
+    example above).  If everything's worked correctly, you should see a page
+    titled "CCSC Example" with a few titles, a list, a little bit of source
+    code and a little bit of mathematical notation.
 
 ## OS X (with Homebrew)
 
