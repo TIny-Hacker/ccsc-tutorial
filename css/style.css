@@ -36,6 +36,10 @@ pre, code {
   border-radius: 4px;
 }
 
+pre code {
+  border: none;
+}
+
 pre {
   white-space: pre-wrap;
   padding-left: 5px;
