@@ -13,17 +13,16 @@ summary:
 ## Prerequisites
 
 Create a (free personal) [GitHub](https://github.com/) account.
-Choose environment for local[^local] setup:  [Linux (on Cloud9)](#linux-on-cloud9),
-[Windows (10)](#windows-10), or [OS X (with Homebrew)](#os-x-with-homebrew).
+Choose environment for local[^local] setup:
+
+-   [Linux](#linux) (via Cloud9 web-based virtual machine).
+-   [Windows](#windows) (tested in Windows 10).
+-   [OS X](#os-x) (tested in Sierra).
 
 [^local]: "Local," i.e., not the setup hosted by GitHub.  This is
     here mostly to remind me to talk about footnotes :)
 
-## Linux (on Cloud9)
-
-Use this setup if you want to avoid installing any new software on
-your computer.  (Or, if you have Linux on your computer, use these
-instructions, modified as necessary for your distribution.)
+## Linux
 
 1.  Create a (free) [Cloud9](https://c9.i0/) account.  Login and create
     a new workspace.  Under "Choose a template,"
@@ -108,9 +107,7 @@ instructions, modified as necessary for your distribution.)
     after "Server address," near the end of the output you get when
     you run the `serve` command.*
 
-## Windows (10)
-
-<!-- something here about how much trouble to uninstall? -->
+## Windows
 
 1.  Download and install the latest version of [Git](https://git-scm.com)
     for Windows.  The installation wizard that pops up gives you a lot of
@@ -275,6 +272,95 @@ instructions, modified as necessary for your distribution.)
     titled "CCSC Example" with a few titles, a list, a little bit of source
     code and a little bit of mathematical notation.
 
-## OS X (with Homebrew)
+## OS X
 
-Coming soon...
+1.  Open a Terminal window and run the following command:
+
+    <pre>
+    <span class="muted">Users Mac:~ user$</span> git config --global user.name "YOUR NAME"
+    </pre>
+
+    Unless you already have the OS X Command Line Developer Tools installed,
+    you'll see a popup asking you whether you'd like to install them.  Choose
+    "Install." (Don't choose "Get Xcode" unless you want the full Xcode
+    environment---which is much more than you need for this tutorial.)
+
+    When the installation finishes, try the `git` command again.  (It should
+    work now.)
+
+    <pre>
+    <span class="muted">Users-Mac:~ user$</span> git config --global user.name "YOUR NAME"
+    </pre>
+
+2.  Finish setting up [Git](https://git-scm.com), and then make a local copy of the example
+    repository I created for this tutorial.  (I created a folder called
+    "ccsc" and put the repository copy in that folder.)
+
+    <pre>
+    <span class="muted">Users-Mac:~ user$</span> git config --global user.email "YOUR EMAIL ADDRESS"
+    <span class="muted">Users-Mac:~ user$</span> mkdir ccsc
+    <span class="muted">Users-Mac:~ user$</span> cd ccsc
+    <span class="muted">Users-Mac:ccsc user$</span> git clone https://github.com/dvon/ccsc-example
+    <span class="muted">Cloning into 'ccsc-example'...
+    remote: Counting objects: 55, done.
+    remote: Compressing objects: 100% (3/3), done.
+    remote: Total 55 (delta 0), reused 0 (delta 0), pack-reused 52
+    Unpacking objects: 100% (55/55), done.
+    Checking connectivity... done.</span>
+    </pre>
+
+3.  Install [Bundler](http://bundler.io/) (using
+    [Ruby](https://www.ruby-lang.org/)'s `gem install` command):
+
+    <pre>
+    <span class="muted">Users-Mac:ccsc user$</span> sudo gem install bundler
+    <span class="muted">Password:
+    Fetching: bundler-1.13.6.gem (100%)
+    Successfully installed bundler-1.13.6
+    Parsing documentation for bundler-1.13.6
+    Installing ri documentation for bundler-1.13.6
+    1 gem installed</span>
+    </pre>
+
+    *Note:  If you have OS X Yosemite or Sierra you should have Ruby version
+    2.0.0 installed by default.  You need Ruby version 2.x.x for this tutorial, so if
+    you have an earlier version of OS X you may need to update Ruby.*
+
+4.  Navigate to the repository folder; use Bundler to update Ruby
+    packages (based on contents of repository's "Gemfile") needed
+    for local [Jekyll](https://jekyllrb.com) installation.
+    (If you get a message about Rubygems not being threadsafe, it's safe to ignore
+    it.)
+
+    <pre>
+    <span class="muted">Users-Mac:ccsc user$</span> cd ccsc-example
+    <span class="muted">Users-Mac:ccsc-example user$</span> sudo bundle update
+    <span class="muted">Password:
+    Fetching gem metadata from https://rubygems.org/...........
+    Fetching version metadata from https://rubygems.org/..
+    Fetching dependency metadata from https://rubygems.org/.
+    Resolving dependencies...</span>
+    </pre>
+    
+
+5.  Execute Jekyll's `serve` command via Bundler's `exec` command:
+
+    <pre>
+    <span class="muted">Users-Mac:ccsc-example user$</span> bundle exec jekyll serve
+    <span class="muted">Configuration file: /Users/user/ccsc/ccsc-example/_config.yml
+                Source: /Users/user/ccsc/ccsc-example
+           Destination: /Users/user/ccsc/ccsc-example/_site
+     Incremental build: disabled. Enable with --incremental
+          Generating... 
+                        done in 0.229 seconds.
+     Auto-regeneration: enabled for '/Users/user/ccsc/ccsc-example'
+    Configuration file: /Users/user/ccsc/ccsc-example/_config.yml
+        Server address: http://127.0.0.1:4000/ccsc-example/
+      Server running... press ctrl-c to stop.</span>
+    </pre>
+
+    Open a web browser and go to the URL Jekyll gives you
+    (`http://128.0.0.1:4000/ccsc-example/`, after "Server address" in the
+    example above.)  If everything's worked correctly, you should see a page
+    titled "CCSC Example" with a few titles, a list, a little bit of source
+    code and a little bit of mathematical notation.
