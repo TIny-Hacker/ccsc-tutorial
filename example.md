@@ -124,7 +124,7 @@ site is generated.
     HTML is generated from the Markdown file.
 
 2.  One more thing before we
-    look at `_layouts/default.html`---`_config.yml`, which contains the
+    look at `_layouts/default.html`---the special file `_config.yml`, which contains the
     following line:
 
     ```yaml
