@@ -143,17 +143,17 @@ site is generated.
     <html>
       <head>
         <meta charset="UTF-8">
-        <link rel="stylesheet" href="{{ site.baseurl }}/css/gruvbox.css" />
+        <link rel="stylesheet" href="&#123;&#123; site.baseurl &#125;&#125;/css/gruvbox.css" />
         <script src='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML'></script>
       </head>
       <body>
-        {{ content }}
+        &#123;&#123; content &#125;&#125;
       </body>
     </html>
     ```
 
-    Where you see `{{ site.baseurl }}`, that will be replaced by the
-    value from `_config.yml`, `/ccsc-example`.  Where you see `{{ content }}`,
+    Where you see `&#123;&#123; site.baseurl &#125;&#125;`, that will be replaced by the
+    value from `_config.yml`, `/ccsc-example`.  Where you see `&#123;&#123; content &#125;&#125;`,
     that will be replaced by the content of the Markdown file, converted
     to HTML by kramdown.  Everything else from `_layouts/default.html`
     will be copied directly to the generated HTML file.
