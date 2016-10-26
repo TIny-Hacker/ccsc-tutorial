@@ -37,7 +37,9 @@ pre, code {
 }
 
 pre code {
+  font-size: 100%;
   border: none;
+  border-radius: none;
 }
 
 pre {
