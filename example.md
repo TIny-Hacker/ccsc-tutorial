@@ -138,25 +138,27 @@ site is generated.
 3.  Here's what's in
     `_layouts/default.html`:
 
+    {% raw %}
     ```html
     <!DOCTYPE html>
     <html>
       <head>
         <meta charset="UTF-8">
-        <link rel="stylesheet" href="&#123;&#123; site.baseurl &#125;&#125;/css/gruvbox.css" />
+        <link rel="stylesheet" href="{{ site.baseurl }}/css/gruvbox.css" />
         <script src='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML'></script>
       </head>
       <body>
-        &#123;&#123; content &#125;&#125;
+        {{ content }}
       </body>
     </html>
     ```
 
-    Where you see `&#123;&#123; site.baseurl &#125;&#125;`, that will be replaced by the
-    value from `_config.yml`, `/ccsc-example`.  Where you see `&#123;&#123; content &#125;&#125;`,
+    Where you see `{{ site.baseurl }}`, that will be replaced by the
+    value from `_config.yml`, `/ccsc-example`.  Where you see `{{ content }}`,
     that will be replaced by the content of the Markdown file, converted
     to HTML by kramdown.  Everything else from `_layouts/default.html`
     will be copied directly to the generated HTML file.
+    {% endraw %}
 
     So we'll get a link to the CSS file needed to bring color to our
     code blocks (`css/gruvbox.css`).  We'll also get a link to JavaScript
