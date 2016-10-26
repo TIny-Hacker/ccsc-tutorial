@@ -56,7 +56,7 @@ code {
   margin: -1px;
 }
 
-em code {
+em code, code em {
   font-style: normal;
 }
 
