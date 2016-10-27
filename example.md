@@ -27,7 +27,7 @@ site is generated.
     So let's take a look at basic Markdown syntax, as illustrated by
     index.md:
 
-    ```
+    ```markdown
     # CCSC Example
 
     A (very short) paragraph,
@@ -52,7 +52,7 @@ site is generated.
     for source code blocks in a variety of languages (via
     [Rouge](http://rouge.jneen.net/)).
 
-    ~~~
+    ~~~markdown
     ## Subtitle, Source Code
 
     ```java
@@ -112,7 +112,7 @@ site is generated.
 
 1.  In the section above, I skipped the beginning of `index.md`:
 
-    ```
+    ```markdown
     ---
     layout: default
     ---
@@ -132,7 +132,7 @@ site is generated.
     ```
 
     With `baseurl` set in the special file `_config.yml`, we'll be able
-    to use `site:baseurl` in other files in place of the base URL for
+    to use `site.baseurl` in other files in place of the base URL for
     the site...so that we only have to set that in one place, `_config.yml`.
 
 3.  Here's what's in
@@ -153,8 +153,10 @@ site is generated.
     </html>
     ```
 
-    Where you see `{{ site.baseurl }}`, that will be replaced by the
-    value from `_config.yml`, `/ccsc-example`.  Where you see `{{ content }}`,
+    Jekyll uses the [Liquid](https://shopify.github.io/liquid/)
+    templating engine---where you see `{{ site.baseurl }}`, that will
+    be replaced by the
+    value from `_config.yml`, `/ccsc-example`; where you see `{{ content }}`,
     that will be replaced by the content of the Markdown file, converted
     to HTML by kramdown.  Everything else from `_layouts/default.html`
     will be copied directly to the generated HTML file.

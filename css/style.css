@@ -36,12 +36,6 @@ pre, code {
   border-radius: 4px;
 }
 
-pre code {
-  font-size: 100%;
-  border: none;
-  border-radius: none;
-}
-
 pre {
   white-space: pre-wrap;
   padding-left: 5px;
@@ -54,6 +48,14 @@ pre .muted {
 code {
   padding: 2px;
   margin: -1px;
+}
+
+pre code {
+  font-size: 100%;
+  border: none;
+  border-radius: 0px;
+  padding: 0px;
+  margin: 0px;
 }
 
 em code {
