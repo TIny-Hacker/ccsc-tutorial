@@ -8,7 +8,9 @@ summary:
 
 # Setup
 
-...for GitHub Pages tutorial, CCSC-Eastern fall 2016 conference.
+These instructions walk you through the process needed to setup
+a local copy of an example site, and then run a local web server
+to confirm that everything's working correctly.
 
 ## Prerequisites
 
