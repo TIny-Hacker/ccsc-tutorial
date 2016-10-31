@@ -9,8 +9,8 @@ summary:
 # Setup
 
 These instructions walk you through the process needed to setup
-a local copy of an example site, and then run a local web server
-to confirm that everything's working correctly.
+a local copy of an example site and then to run a local web server
+and confirm that everything's working correctly.
 
 ## Prerequisites
 
