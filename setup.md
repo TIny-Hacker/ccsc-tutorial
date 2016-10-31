@@ -13,18 +13,16 @@ summary:
 ## Prerequisites
 
 Create a (free personal) [GitHub](https://github.com/) account.
-Choose environment for local[^local] setup:
+Choose environment for local setup:
 
--   [Linux](#linux) (via Cloud9 web-based virtual machine).
+-   [Linux](#linux) (tested in Ubuntu 14.04, via Cloud9 web-based
+    virtual machine).
 -   [Windows](#windows) (tested in Windows 10).
 -   [OS X](#os-x) (tested in Sierra).
 
-[^local]: "Local," i.e., not the setup hosted by GitHub.  This is
-    here mostly to remind me to talk about footnotes :)
-
 ## Linux
 
-1.  Create a (free) [Cloud9](https://c9.i0/) account.  Login and create
+1.  Create a (free) [Cloud9](https://c9.io/) account.[^cloud9]  Login and create
     a new workspace.  Under "Choose a template,"
     pick "Blank" to get the default [Ubuntu](https://www.ubuntu.com)
     Linux configuration.
@@ -267,7 +265,7 @@ Choose environment for local[^local] setup:
     </pre>
     
     Open a web browser and go to the URL Jekyll gives you
-    (`http://128.0.0.1:4000/ccsc-example/`, after "Server address" in the
+    (`http://127.0.0.1:4000/ccsc-example/`, after "Server address" in the
     example above).  If everything's worked correctly, you should see a page
     titled "CCSC Example" with a few titles, a list, a little bit of source
     code and a little bit of mathematical notation.
@@ -360,7 +358,15 @@ Choose environment for local[^local] setup:
     </pre>
 
     Open a web browser and go to the URL Jekyll gives you
-    (`http://128.0.0.1:4000/ccsc-example/`, after "Server address" in the
+    (`http://127.0.0.1:4000/ccsc-example/`, after "Server address" in the
     example above.)  If everything's worked correctly, you should see a page
     titled "CCSC Example" with a few titles, a list, a little bit of source
     code and a little bit of mathematical notation.
+
+[^cloud9]: Cloud 9 recently (as of fall 2016) changed their registration
+           process so that a credit card is required, even if you only use
+           the free basic service.  With that in mind, if you'd prefer not
+           to use Cloud 9, the Linux instructions above should also work
+           on [Nitrous](https://www.nitrous.io), on a local Linux (i.e.,
+           recent Ubuntu) installation, or a virtual Linux installation
+           (on, e.g., [VirtualBox](https://www.virtualbox.org)).
